@@ -1,0 +1,174 @@
+/* src/components/RiskScore/RiskScoreCard.css */
+.risk-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.risk-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--risk-color);
+  opacity: 0.8;
+}
+
+.risk-card:hover {
+  border-color: var(--risk-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.risk-card.selected {
+  border-color: var(--risk-color);
+  box-shadow: 0 0 0 2px var(--risk-color), 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.risk-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.risk-district-name {
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.risk-pincode {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.risk-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.risk-card-body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.score-ring-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.score-ring-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 1;
+}
+
+.score-number {
+  font-family: 'Orbitron', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  display: block;
+}
+
+.score-label {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.risk-quick-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.quick-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.quick-stat svg { color: var(--text-muted); }
+
+.river-name {
+  font-size: 11px;
+  color: var(--text-muted);
+  gap: 6px;
+}
+
+.river-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.river-status-dot.normal { background: #22c55e; }
+.river-status-dot.watch { background: #f59e0b; }
+.river-status-dot.warning { background: #f97316; }
+.river-status-dot.danger { background: #ef4444; }
+.river-status-dot.extreme-danger { background: #a855f7; animation: pulseDot 1s infinite; }
+
+.risk-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.breakdown-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breakdown-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 80px;
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.breakdown-bar-track {
+  flex: 1;
+  height: 5px;
+  background: var(--surface-3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.breakdown-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+
+.breakdown-val {
+  width: 24px;
+  text-align: right;
+  font-size: 11px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
