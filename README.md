@@ -233,6 +233,6 @@ MIT License
 ---
 
 ## 👨‍💻 Author
-Kiran Sai H
-Deeranneeshwaran S. B
+Kiran Sai H \n
+Deeranneeshwaran S. B \n
 Shashank Dharahaas Reddy
